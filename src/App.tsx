@@ -8,6 +8,7 @@ import FAQ from './components/FAQ';
 import SocialLinks from './components/SocialLinks';
 import Carousel from './components/Carousel';
 import ChatBot from './components/ChatBot';
+import TestimonialsCarousel from './components/TestimonialsCarousel';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -40,12 +41,13 @@ function App() {
       <Carousel />
       <Services />
       <Stats />
+      <TestimonialsCarousel />
       <FAQ />
       <SocialLinks />
 
       <button
         onClick={() => setIsChatbotOpen(!isChatbotOpen)}
-        className="fixed bottom-5 right-5 w-12 h-12 rounded-md bg-[var(--primary)] text-[var(--dark)] flex items-center justify-center cursor-pointer z-[1000] shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-5 right-5 w-12 h-12 bg-[var(--primary)] text-[var(--dark)] flex items-center justify-center cursor-pointer z-[1000] shadow-lg transition-all duration-300 hover:scale-110"
         aria-label="Open chatbot"
       >
         <MessageCircle />
