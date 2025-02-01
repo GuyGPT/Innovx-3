@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Settings, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,13 +57,7 @@ const Navbar = () => {
                 className="inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
               >
                 <span className="mr-2">Thème</span>
-                {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
-              </button>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
-              >
-                <Settings size={24} />
+                {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
               </button>
             </div>
           </div>
@@ -98,7 +92,7 @@ const Navbar = () => {
               className="flex items-center justify-center p-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
             >
               <span className="mr-2">Thème</span>
-              {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
+              {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
             </button>
           </div>
           <button
