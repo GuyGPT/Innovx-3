@@ -13,12 +13,12 @@
 }
 
 [data-theme="light"] {
-  --primary: #FFD700;
+  --primary: #000000; /* Black for primary */
   --secondary: #4a5568;
-  --accent: #FFD700;
-  --dark: #ffffff;
+  --accent: #000000; /* Black for accent */
+  --dark: #ffffff; /* White background */
   --light: #1a1a1a;
-  --text-dark: #000000;
+  --text-dark: #000000; /* Black for text */
   --text-light: #f8fafc;
 }
 
