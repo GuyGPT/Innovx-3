@@ -13,13 +13,13 @@
 }
 
 [data-theme="light"] {
-  --primary: #000000;
+  --primary: #FFD700;
   --secondary: #4a5568;
-  --accent: #000000;
+  --accent: #FFD700;
   --dark: #ffffff;
   --light: #1a1a1a;
   --text-dark: #000000;
-  --text-light: #ffffff;
+  --text-light: #f8fafc;
 }
 
 /* Mobile First Approach */
@@ -52,11 +52,31 @@
   }
 }
 
+/* Animations */
+@keyframes splash {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.splash-text {
+  animation: splash 2s ease-in-out infinite;
+}
+
 /* Responsive Carousel */
 .carousel {
   width: 100%;
   max-width: 800px;
-  margin: 0.5rem auto 0; /* Reduced top margin */
+  margin: 0 auto;
   aspect-ratio: 1;
 }
 
@@ -64,7 +84,7 @@
   .carousel {
     aspect-ratio: 1;
     width: calc(100% - 2rem);
-    margin: 0.5rem; /* Reduced top margin */
+    margin: 1rem;
   }
 }
 
@@ -124,16 +144,4 @@ iframe {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
-}
-
-.splash-text-container {
-  text-align: center;
-  margin: 0.5rem 0; /* Reduced margin */
-}
-
-.splash-text {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary);
 }

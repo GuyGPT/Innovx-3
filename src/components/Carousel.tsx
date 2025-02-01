@@ -53,20 +53,21 @@ const Carousel = () => {
           />
         ))}
       </div>
-    </div>
-    <div className="carousel-controls flex justify-center gap-2 mt-2">
-      <button
-        onClick={prevSlide}
-        className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-      >
-        <ChevronLeft />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-      >
-        <ChevronRight />
-      </button>
+      
+      <div className="carousel-controls absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <button
+          onClick={prevSlide}
+          className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+        >
+          <ChevronRight />
+        </button>
+      </div>
     </div>
   );
 };
