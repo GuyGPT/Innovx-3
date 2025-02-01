@@ -32,7 +32,7 @@ function App() {
       <Hero />
       
       <div className="splash-text-container text-center my-8">
-        <h2 className="splash-text text-[var(--primary)] text-4xl font-bold">
+        <h2 className="text-[var(--primary)] text-4xl font-bold">
           BON PLAN
         </h2>
       </div>

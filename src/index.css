@@ -52,26 +52,6 @@
   }
 }
 
-/* Animations */
-@keyframes splash {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.splash-text {
-  animation: splash 2s ease-in-out infinite;
-}
-
 /* Responsive Carousel */
 .carousel {
   width: 100%;
@@ -144,4 +124,13 @@ iframe {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+}
+
+/* Custom Styles */
+.splash-text-container {
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.carousel {
+  margin-top: 1rem; /* Reduced margin */
 }
