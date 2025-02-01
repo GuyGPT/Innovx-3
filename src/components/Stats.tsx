@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, ThumbsUp, Clock, FileText } from 'lucide-react';
+import { Users, ThumbsUp, Clock, Trophy } from 'lucide-react';
 
 const Stats = () => {
   return (
@@ -9,7 +9,7 @@ const Stats = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto">
         <div className="text-center p-4 md:p-8">
-          <Users className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
+          <Trophy className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
           <div className="text-3xl md:text-4xl font-bold text-[var(--primary)]">7</div>
           <div className="text-sm md:text-base text-[var(--light)]">Experts Dévoués</div>
         </div>
@@ -27,7 +27,7 @@ const Stats = () => {
         </div>
         
         <div className="text-center p-4 md:p-8">
-          <FileText className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
+          <Users className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
           <div className="text-3xl md:text-4xl font-bold text-[var(--primary)]">XXX</div>
           <div className="text-sm md:text-base text-[var(--light)]">Inscriptions au Site</div>
         </div>
