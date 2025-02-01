@@ -8,11 +8,12 @@ import FAQ from './components/FAQ';
 import SocialLinks from './components/SocialLinks';
 import Carousel from './components/Carousel';
 import ChatBot from './components/ChatBot';
-import TestimonialsCarousel from './components/TestimonialsCarousel';
+import WhatsAppPopup from './components/WhatsAppPopup';
 
 function App() {
   const [theme, setTheme] = useState('dark');
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [isWhatsAppPopupOpen, setIsWhatsAppPopupOpen] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -25,6 +26,10 @@ function App() {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.body.setAttribute('data-theme', newTheme);
+  };
+
+  const closeWhatsAppPopup = () => {
+    setIsWhatsAppPopupOpen(false);
   };
 
   return (
@@ -41,7 +46,6 @@ function App() {
       <Carousel />
       <Services />
       <Stats />
-      <TestimonialsCarousel />
       <FAQ />
       <SocialLinks />
 
@@ -54,6 +58,8 @@ function App() {
       </button>
 
       <ChatBot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
+
+      {isWhatsAppPopupOpen && <WhatsAppPopup onClose={closeWhatsAppPopup} />}
 
       <div id="install-prompt" className="hidden fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-[var(--dark)] p-4 shadow-lg z-[1000] border border-[var(--primary)] text-[var(--light)]">
         <p>Installez l'application InnovX pour un accès rapide</p>

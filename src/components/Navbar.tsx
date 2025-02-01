@@ -73,35 +73,33 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="fixed inset-0 bg-[var(--dark)] z-50 overflow-y-auto">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
-              Services
-            </MobileNavLink>
-            <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
-              Formation
-            </MobileNavLink>
-            <MobileNavLink href="#technologies" onClick={() => setIsMenuOpen(false)}>
-              Technologies
-            </MobileNavLink>
-            <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </MobileNavLink>
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center p-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
-            >
-              <span className="mr-2">Thème</span>
-              {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
-            </button>
-          </div>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
+            Services
+          </MobileNavLink>
+          <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
+            Formation
+          </MobileNavLink>
+          <MobileNavLink href="#technologies" onClick={() => setIsMenuOpen(false)}>
+            Technologies
+          </MobileNavLink>
+          <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </MobileNavLink>
           <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-4 right-4 p-2 rounded-md text-[var(--primary)]"
+            onClick={toggleTheme}
+            className="flex items-center justify-center p-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
           >
-            <X size={24} />
+            <span className="mr-2">Thème</span>
+            {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
           </button>
         </div>
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute top-4 right-4 p-2 rounded-md text-[var(--primary)]"
+        >
+          <X size={24} />
+        </button>
       </div>
     </nav>
   );
