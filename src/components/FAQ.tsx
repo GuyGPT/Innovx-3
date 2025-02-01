@@ -14,16 +14,6 @@ const FAQ = () => {
             les paiements, etc.
           </p>
         </div>
-        
-        <div className="service-card bg-[var(--dark)] p-8 rounded-lg shadow-lg border border-[var(--primary)]">
-          <h3 className="text-[var(--primary)] text-xl font-bold mb-4">
-            Témoignages Clients
-          </h3>
-          <p className="text-[var(--light)]">
-            Témoignages de clients satisfaits, études de cas et success stories pour 
-            renforcer la crédibilité et la confiance.
-          </p>
-        </div>
       </div>
     </section>
   );
