@@ -126,7 +126,7 @@ const MobileNavLink = ({
   <a
     href={href}
     onClick={onClick}
-    className="text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] block px-3 py-2 rounded-md text-base font-medium transition-colors"
+    className="text-white hover:bg-white hover:text-[var(--dark)] block px-3 py-2 rounded-md text-base font-medium transition-colors border border-white"
   >
     {children}
   </a>
