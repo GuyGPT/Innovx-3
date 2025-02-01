@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FFE600;
+  --secondary: #475569;
+  --accent: #FFE600;
+  --dark: #1a1a1a;
+  --light: #f8fafc;
+  --text-dark: #1a1a1a;
+  --text-light: #f8fafc;
+}
+
+[data-theme="light"] {
+  --primary: #FFD700;
+  --secondary: #4a5568;
+  --accent: #FFD700;
+  --dark: #ffffff;
+  --light: #1a1a1a;
+  --text-dark: #000000;
+  --text-light: #f8fafc;
+}
+
+/* Mobile First Approach */
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* Laptop and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Animations */
+@keyframes splash {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.splash-text {
+  animation: splash 2s ease-in-out infinite;
+}
+
+/* Responsive Carousel */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark);
+    padding: 1rem;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Chat Widget */
+@media (max-width: 768px) {
+  #chatbot-widget {
+    width: 90vw !important;
+    height: 80vh !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+  }
+}
+
+/* Responsive Controls */
+@media (max-width: 640px) {
+  .theme-toggle,
+  #chatbot-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .theme-toggle {
+    bottom: 1rem !important;
+    left: 1rem !important;
+  }
+
+  #chatbot-button {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+/* Fix iframe responsiveness */
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
