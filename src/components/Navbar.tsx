@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Settings, Moon, Sun } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    document.body.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.body.setAttribute('data-theme', newTheme);
+  };
 
   useEffect(() => {
     const checkMobile = () => {
@@ -38,6 +52,19 @@ const Navbar = () => {
               <NavLink href="#formation">Formation</NavLink>
               <NavLink href="#technologies">Technologies</NavLink>
               <NavLink href="#contact">Contact</NavLink>
+              <button
+                onClick={toggleTheme}
+                className="inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
+              >
+                {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
+                <span className="ml-2">Thème</span>
+              </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
+              >
+                <Settings size={24} />
+              </button>
             </div>
           </div>
 
@@ -66,6 +93,13 @@ const Navbar = () => {
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact
             </MobileNavLink>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center p-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
+            >
+              {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
+              <span className="ml-2">Thème</span>
+            </button>
           </div>
           <button
             onClick={() => setIsMenuOpen(false)}
