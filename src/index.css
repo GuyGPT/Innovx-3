@@ -22,6 +22,53 @@
   --text-light: #f8fafc;
 }
 
+[data-theme="dark"] .menu button,
+[data-theme="dark"] .menu a,
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .chatbot-button {
+  color: black !important;
+  border-color: black !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .menu button:hover,
+[data-theme="dark"] .menu a:hover {
+  background-color: black !important;
+  color: var(--primary) !important;
+  border-color: black !important;
+}
+
+/* Mobile Menu Specific Styles */
+[data-theme="dark"] .menu .mobile-menu button,
+[data-theme="dark"] .menu .mobile-menu a,
+[data-theme="dark"] .menu .mobile-menu .theme-toggle,
+[data-theme="dark"] .menu .mobile-menu .chatbot-button {
+  color: black !important;
+  border-color: black !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .menu .mobile-menu button:hover,
+[data-theme="dark"] .menu .mobile-menu a:hover {
+  background-color: black !important;
+  color: var(--primary) !important;
+  border-color: black !important;
+}
+
+[data-theme="dark"] .menu button,
+[data-theme="dark"] .menu a,
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .chatbot-button {
+  color: black !important;
+  border-color: black !important;
+}
+
+[data-theme="dark"] .menu button:hover,
+[data-theme="dark"] .menu a:hover {
+  background-color: black !important;
+  color: var(--primary) !important;
+}
+
 /* Mobile First Approach */
 .container {
   width: 100%;
