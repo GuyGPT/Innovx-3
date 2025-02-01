@@ -122,18 +122,18 @@
 /* Responsive Controls */
 @media (max-width: 640px) {
   .theme-toggle,
-  #chatbot-button {
+  .chatbot-button {
     width: 40px !important;
     height: 40px !important;
+    bottom: 1rem !important;
+    position: fixed !important;
   }
 
   .theme-toggle {
-    bottom: 1rem !important;
     left: 1rem !important;
   }
 
-  #chatbot-button {
-    bottom: 1rem !important;
+  .chatbot-button {
     right: 1rem !important;
   }
 }
