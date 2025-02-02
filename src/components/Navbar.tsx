@@ -3,7 +3,6 @@ import { Menu, X, Moon } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
@@ -18,17 +17,6 @@ const Navbar = () => {
     localStorage.setItem('theme', newTheme);
     document.body.setAttribute('data-theme', newTheme);
   };
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <nav className="bg-[var(--primary)] relative">
@@ -62,16 +50,19 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="-mr-2 flex md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-[var(--dark)] hover:bg-[var(--dark)] hover:text-[var(--primary)] transition-colors"
+              aria-label="Open main menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* New Mobile menu */}
       <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
@@ -88,18 +79,12 @@ const Navbar = () => {
           </MobileNavLink>
           <button
             onClick={toggleTheme}
-            className="flex items-center justify-center p-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
+            className="flex items-center justify-center w-full px-3 py-2 rounded-md text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--dark)] transition-colors"
           >
             <span className="mr-2">Thème</span>
             {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
           </button>
         </div>
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="absolute top-4 right-4 p-2 rounded-md text-[var(--primary)]"
-        >
-          <X size={24} />
-        </button>
       </div>
     </nav>
   );
@@ -126,7 +111,7 @@ const MobileNavLink = ({
   <a
     href={href}
     onClick={onClick}
-    className="text-white hover:bg-white hover:text-[var(--dark)] block px-3 py-2 rounded-md text-base font-medium transition-colors border border-white"
+    className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[var(--dark)] transition-colors"
   >
     {children}
   </a>
