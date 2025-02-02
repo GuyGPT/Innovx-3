@@ -55,20 +55,6 @@
   border-color: black !important;
 }
 
-[data-theme="dark"] .menu button,
-[data-theme="dark"] .menu a,
-[data-theme="dark"] .theme-toggle,
-[data-theme="dark"] .chatbot-button {
-  color: black !important;
-  border-color: black !important;
-}
-
-[data-theme="dark"] .menu button:hover,
-[data-theme="dark"] .menu a:hover {
-  background-color: black !important;
-  color: var(--primary) !important;
-}
-
 /* Mobile First Approach */
 .container {
   width: 100%;
@@ -133,6 +119,22 @@
   .menu.active {
     transform: translateX(0);
   }
+
+  .menu button,
+  .menu a,
+  .theme-toggle,
+  .chatbot-button {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    background-color: transparent !important;
+  }
+
+  .menu button:hover,
+  .menu a:hover {
+    background-color: var(--primary) !important;
+    color: var(--dark) !important;
+    border-color: var(--primary) !important;
+  }
 }
 
 /* Responsive Chat Widget */
@@ -180,4 +182,88 @@ iframe {
 
 .carousel {
   margin-top: 1rem; /* Reduced margin */
+}
+
+/* Mobile Menu Styles */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark);
+  padding: 1rem;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.menu button,
+.menu a,
+.theme-toggle,
+.chatbot-button {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+
+.menu button:hover,
+.menu a:hover {
+  background-color: var(--primary) !important;
+  color: var(--dark) !important;
+  border-color: var(--primary) !important;
+}
+
+.menu .mobile-menu button,
+.menu .mobile-menu a,
+.menu .mobile-menu .theme-toggle,
+.menu .mobile-menu .chatbot-button {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+
+.menu .mobile-menu button:hover,
+.menu .mobile-menu a:hover {
+  background-color: var(--primary) !important;
+  color: var(--dark) !important;
+  border-color: var(--primary) !important;
+}
+
+.menu .mobile-menu a {
+  display: block;
+  padding: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+}
+
+.menu .mobile-menu a:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.menu .mobile-menu .theme-toggle,
+.menu .mobile-menu .chatbot-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+}
+
+.menu .mobile-menu .theme-toggle:hover,
+.menu .mobile-menu .chatbot-button:hover {
+  background-color: var(--primary);
+  color: var(--dark);
 }
