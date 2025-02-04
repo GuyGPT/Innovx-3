@@ -39,34 +39,36 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel max-w-[800px] mx-auto my-8 relative overflow-hidden rounded-lg border-2 border-[var(--primary)] aspect-square">
-      <div 
-        className="carousel-container transition-transform duration-300 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <img
-            key={index}
-            src={slide.src}
-            alt={slide.alt}
-            className="w-full h-full object-cover"
-          />
-        ))}
-      </div>
-      
-      <div className="carousel-controls absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        <button
-          onClick={prevSlide}
-          className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+    <div className="carousel-container">
+      <div className="carousel max-w-[800px] mx-auto relative overflow-hidden rounded-lg border-2 border-[var(--primary)] aspect-square">
+        <div 
+          className="carousel-container transition-transform duration-300 ease-in-out h-full"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          <ChevronLeft />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-        >
-          <ChevronRight />
-        </button>
+          {slides.map((slide, index) => (
+            <img
+              key={index}
+              src={slide.src}
+              alt={slide.alt}
+              className="w-full h-full object-cover"
+            />
+          ))}
+        </div>
+        
+        <div className="carousel-controls absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          <button
+            onClick={prevSlide}
+            className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="w-8 h-8 bg-[var(--primary)] text-[var(--dark)] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
     </div>
   );
