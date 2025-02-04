@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#040504] text-white">
+    <nav className="bg-[#040504]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -34,24 +34,32 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            {/* Desktop Menu Items */}
             <NavLink href="#services">Services</NavLink>
             <NavLink href="#formation">Formation</NavLink>
             <NavLink href="#technologies">Technologies</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <button
               onClick={toggleTheme}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white hover:text-[#040504] border border-white hover:border-[#040504] transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
+              style={{
+                color: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                backgroundColor: '#040504'
+              }}
             >
-              <span className="mr-2">Thème</span>
-              {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
+              {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
             </button>
           </div>
 
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white hover:text-[#040504] border border-white hover:border-[#040504] transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
+              style={{
+                color: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                backgroundColor: '#040504'
+              }}
               aria-label="Open main menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -60,9 +68,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#040504] text-white">
+        <div className="md:hidden bg-[#040504]">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
               Services
@@ -78,10 +85,14 @@ const Navbar = () => {
             </MobileNavLink>
             <button
               onClick={toggleTheme}
-              className="flex items-center justify-center w-full px-3 py-2 rounded-md text-white hover:bg-white hover:text-[#040504] border border-white hover:border-[#040504] transition-colors"
+              className="flex items-center justify-center w-full px-3 py-2 rounded-md border transition-colors"
+              style={{
+                color: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                backgroundColor: '#040504'
+              }}
             >
-              <span className="mr-2">Thème</span>
-              {theme === 'dark' ? <Moon size={24} /> : <Moon size={24} />}
+              {theme === 'dark' ? <Moon size={24} /> : <Sun size={24} />}
             </button>
           </div>
         </div>
@@ -93,7 +104,12 @@ const Navbar = () => {
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
     href={href}
-    className="text-white hover:bg-white hover:text-[#040504] px-3 py-2 rounded-md text-sm font-medium border border-white hover:border-[#040504] transition-colors"
+    className="px-3 py-2 rounded-md text-sm font-medium border transition-colors"
+    style={{
+      color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
+      borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
+      backgroundColor: '#040504'
+    }}
   >
     {children}
   </a>
@@ -111,7 +127,12 @@ const MobileNavLink = ({
   <a
     href={href}
     onClick={onClick}
-    className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#040504] border border-white hover:border-[#040504] transition-colors"
+    className="block px-3 py-2 rounded-md text-base font-medium border transition-colors"
+    style={{
+      color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
+      borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
+      backgroundColor: '#040504'
+    }}
   >
     {children}
   </a>
