@@ -28,7 +28,7 @@ const Stats = () => {
         
         <div className="text-center p-4 md:p-8">
           <Users className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
-          <div className="text-3xl md:text-4xl font-bold text-[var(--primary)]">XXX</div>
+          <div className="text-3xl md:text-4xl font-bold text-[var(--primary)]">4853</div>
           <div className="text-sm md:text-base text-[var(--light)]">Inscriptions au Site</div>
         </div>
       </div>
