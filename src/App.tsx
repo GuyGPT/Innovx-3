@@ -31,7 +31,7 @@ function App() {
       <Navbar />
       <Hero />
       
-      <div className="splash-text-container text-center my-8">
+      <div className="splash-text-container text-center my-4"> {/* Reduced margin */}
         <h2 className="text-[var(--primary)] text-4xl font-bold">
           BON PLAN
         </h2>
