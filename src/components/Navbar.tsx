@@ -38,6 +38,7 @@ const Navbar = () => {
             <NavLink href="#formation">Formation</NavLink>
             <NavLink href="#technologies">Technologies</NavLink>
             <NavLink href="#contact">Contact</NavLink>
+            <NavLink href="#communaute">Communauté</NavLink>
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
@@ -82,6 +83,9 @@ const Navbar = () => {
             </MobileNavLink>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact
+            </MobileNavLink>
+            <MobileNavLink href="#communaute" onClick={() => setIsMenuOpen(false)}>
+              Communauté
             </MobileNavLink>
             <button
               onClick={toggleTheme}
