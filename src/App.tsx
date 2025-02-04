@@ -45,7 +45,7 @@ function App() {
 
       <button
         onClick={() => setIsChatbotOpen(!isChatbotOpen)}
-        className="fixed bottom-5 right-5 w-12 h-12 bg-[var(--primary)] text-[var(--dark)] flex items-center justify-center cursor-pointer z-[1000] shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-5 right-5 w-12 h-12 bg-[var(--primary)] text-[var(--dark)] flex items-center justify-center cursor-pointer z-[1000] shadow-lg transition-all duration-300 hover:scale-110 rounded-full"
         aria-label="Open chatbot"
       >
         <MessageCircle />
