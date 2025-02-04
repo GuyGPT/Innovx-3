@@ -24,8 +24,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <img 
-              src="https://i.ibb.co/xDYyC9D/1736962221453.png" 
-              alt="InnovXPRO.COM logo" 
+              src="https://i.ibb.co/xDYyC9D/1736962221412" 
+              alt="InnovXPRO.COM" 
               className="h-8 w-auto sm:h-10"
             />
             <span className="ml-2 text-xl sm:text-2xl font-bold text-[#F8E061]">
@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <NavLink href="#services">Services</NavLink>
             <NavLink href="#formation">Formation</NavLink>
-            <NavLink href="#technologies">Technologies</NavLink>
+            <NavLink href="#coaching">Coaching/Mentorat</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#communaute">Communauté</NavLink>
             <button
@@ -71,15 +71,15 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div className="md:hidden bg-[#040504]">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3">
             <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
               Services
             </MobileNavLink>
             <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
               Formation
             </MobileNavLink>
-            <MobileNavLink href="#technologies" onClick={() => setIsMenuOpen(false)}>
-              Technologies
+            <MobileNavLink href="#coaching" onClick={() => setIsMenuOpen(false)}>
+              Coaching/Mentorat
             </MobileNavLink>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact
@@ -131,7 +131,7 @@ const MobileNavLink = ({
   <a
     href={href}
     onClick={onClick}
-    className="block px-3 py-2 rounded-md text-base font-medium border transition-colors"
+    className="block px-3 py-2 rounded-md text-sm font-medium border transition-colors"
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
