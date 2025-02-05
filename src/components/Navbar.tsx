@@ -39,6 +39,7 @@ const Navbar = () => {
             <NavLink href="#coaching">Coaching/Mentorat</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <NavLink href="#communaute">Communauté</NavLink>
+            <NavLink href="#about">À propos</NavLink> {/* Nouveau lien */}
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center p-2 rounded-md border transition-colors"
@@ -87,6 +88,9 @@ const Navbar = () => {
             <MobileNavLink href="#communaute" onClick={() => setIsMenuOpen(false)}>
               Communauté
             </MobileNavLink>
+            <MobileNavLink href="#about" onClick={() => setIsMenuOpen(false)}>
+              À propos
+            </MobileNavLink> {/* Nouveau lien */}
             <button
               onClick={toggleTheme}
               className="flex items-center justify-center w-full px-3 py-2 rounded-md border transition-colors"
