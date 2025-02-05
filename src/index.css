@@ -15,7 +15,7 @@
 [data-theme="light"] {
   --primary: #000000; /* Black for primary */
   --secondary: #4a5568;
-  --accent: #000000; /* Black for accent */
+  --accent: #000000;
   --dark: #ffffff; /* White background */
   --light: #1a1a1a;
   --text-dark: #000000; /* Black for text */
@@ -275,4 +275,8 @@ iframe {
 .menu .mobile-menu .chatbot-button:hover {
   background-color: var(--primary);
   color: var(--dark);
+}
+
+.carousel-controls {
+  bottom: -20px; /* Ajustez cette valeur pour contrôler l'écart entre le carrousel et les boutons */
 }
