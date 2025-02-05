@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Modal from './Modal'; // Importer le composant Modal
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
+
   const slides = [
     {
       src: "https://i.ibb.co/Q9ZptwK/Flyer-Formation-en-informatique-innov-X-1.jpg",
@@ -38,6 +41,15 @@ const Carousel = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+  const openModal = (src: string) => {
+    setSelectedImage(src);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="carousel-container relative">
       <div className="carousel max-w-[800px] mx-auto relative overflow-hidden rounded-lg border-2 border-[var(--primary)] aspect-square">
@@ -50,7 +62,8 @@ const Carousel = () => {
               key={index}
               src={slide.src}
               alt={slide.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover cursor-pointer"
+              onClick={() => openModal(slide.src)}
             />
           ))}
         </div>
@@ -69,6 +82,7 @@ const Carousel = () => {
           <ChevronRight />
         </button>
       </div>
+      {isModalOpen && <Modal src={selectedImage} onClose={closeModal} />}
     </div>
   );
 };
