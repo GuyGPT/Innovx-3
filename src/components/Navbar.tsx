@@ -5,6 +5,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState('dark');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -21,6 +22,10 @@ const Navbar = () => {
 
   const toggleDropdown = (title: string) => {
     setOpenDropdown((prev) => (prev === title ? null : title));
+  };
+
+  const toggleServicesMenu = () => {
+    setIsServicesMenuOpen(!isServicesMenuOpen);
   };
 
   return (
@@ -177,10 +182,11 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-[#040504]">
-          <div className="px-2 pt-2 pb-3">
-            <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>
+          <div className="px-2 pt-2 pb-3 space-y-2"> {/* Added space-y-2 */}
+            <MobileNavLink href="#services" onClick={() => {setIsMenuOpen(false); toggleServicesMenu();}}>
               Services
             </MobileNavLink>
             <MobileNavLink href="#formation" onClick={() => setIsMenuOpen(false)}>
@@ -197,7 +203,7 @@ const Navbar = () => {
             </MobileNavLink>
             <MobileNavLink href="#about" onClick={() => setIsMenuOpen(false)}>
               À propos
-            </MobileNavLink> {/* Nouveau lien */}
+            </MobileNavLink>
             <button
               onClick={toggleTheme}
               className="flex items-center justify-center w-full px-3 py-2 rounded-md border transition-colors"
@@ -212,6 +218,111 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      {/* Mobile Services Menu */}
+      <div
+        className={`fixed top-0 left-0 w-3/4 h-full bg-[#040504] z-50 transform transition-transform duration-300 ${
+          isServicesMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex items-center justify-between p-4">
+          <span className="text-lg font-bold text-[#F8E061]">Services</span>
+          <button onClick={toggleServicesMenu} className="p-2 text-[#F8E061]">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="px-2 pt-2 pb-3 space-y-2"> {/* Added space-y-2 */}
+          {/* Maintenance Professionnelle */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <Wrench className="mr-2" />
+              Maintenance Professionnelle
+            </h3>
+            <MobileNavLink href="#maintenance-packs" onClick={toggleServicesMenu} isDropdown>
+              Packs de Maintenance
+            </MobileNavLink>
+            <MobileNavLink href="#maintenance-electrique" onClick={toggleServicesMenu} isDropdown>
+              Maintenance Électrique
+            </MobileNavLink>
+            <MobileNavLink href="#maintenance-froid" onClick={toggleServicesMenu} isDropdown>
+              Maintenance Froid et Climatisation
+            </MobileNavLink>
+          </div>
+
+          {/* Services Numériques */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <Monitor className="mr-2" />
+              Services Numériques
+            </h3>
+            <MobileNavLink href="#developpement-web" onClick={toggleServicesMenu} isDropdown>
+              Développement de Sites Web
+            </MobileNavLink>
+            <MobileNavLink href="#maintenance-informatique" onClick={toggleServicesMenu} isDropdown>
+              Maintenance Informatique
+            </MobileNavLink>
+            <MobileNavLink href="#transformation-digitale" onClick={toggleServicesMenu} isDropdown>
+              Consultance en Transformation Digitale
+            </MobileNavLink>
+          </div>
+
+          {/* Services d'Affaires */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <Briefcase className="mr-2" />
+              Services d'Affaires
+            </h3>
+            <MobileNavLink href="#secretariat-public" onClick={toggleServicesMenu} isDropdown>
+              Secrétariat Public
+            </MobileNavLink>
+            <MobileNavLink href="#librairie-bureautique" onClick={toggleServicesMenu} isDropdown>
+              Librairie et Consommables Bureautiques
+            </MobileNavLink>
+          </div>
+
+          {/* Énergie et Environnement */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <Leaf className="mr-2" />
+              Énergie et Environnement
+            </h3>
+            <MobileNavLink href="#solutions-energetiques" onClick={toggleServicesMenu} isDropdown>
+              Solutions Énergétiques
+            </MobileNavLink>
+            <MobileNavLink href="#controle-technique" onClick={toggleServicesMenu} isDropdown>
+              Suivi et Contrôle Technique
+            </MobileNavLink>
+          </div>
+
+          {/* Formations Professionnelles */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <BookOpen className="mr-2" />
+              Formations Professionnelles
+            </h3>
+            <MobileNavLink href="#formation-informatique" onClick={toggleServicesMenu} isDropdown>
+              Informatique et Bureautique
+            </MobileNavLink>
+            <MobileNavLink href="#formation-developpement-personnel" onClick={toggleServicesMenu} isDropdown>
+              Développement Personnel
+            </MobileNavLink>
+          </div>
+
+          {/* Consultance et Accompagnement */}
+          <div className="mb-2"> {/* Added mb-2 */}
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
+              <Users className="mr-2" />
+              Consultance et Accompagnement
+            </h3>
+            <MobileNavLink href="#intelligence-financiere" onClick={toggleServicesMenu} isDropdown>
+              Intelligence Financière
+            </MobileNavLink>
+            <MobileNavLink href="#developpement-innovation" onClick={toggleServicesMenu} isDropdown>
+              Développement Personnel et Innovation
+            </MobileNavLink>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };
@@ -266,16 +377,18 @@ const NavLink = ({ href, children, isDropdown }: { href: string; children: React
 const MobileNavLink = ({ 
   href, 
   children, 
-  onClick 
+  onClick,
+  isDropdown
 }: { 
   href: string; 
   children: React.ReactNode;
   onClick: () => void;
+  isDropdown?: boolean;
 }) => (
   <a
     href={href}
     onClick={onClick}
-    className="block px-3 py-2 rounded-md text-sm font-medium border transition-colors"
+    className={`block px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left' : ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
