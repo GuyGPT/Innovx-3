@@ -228,7 +228,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
     <div className="relative">
       <button
         onClick={() => toggleDropdown(title)}
-        className="px-3 py-2 rounded-md text-sm font-medium border transition-colors flex items-center gap-1"
+        className="px-3 py-2 rounded-md text-sm font-medium border transition-colors flex items-center gap-1 dropdown-button"
         style={{
           color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
           borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
@@ -239,7 +239,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
       </button>
       
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-auto rounded-md shadow-lg bg-[#040504] border border-[#F8E061] z-50 dropdown-menu">
+        <div className="absolute left-0 mt-2 w-auto rounded-md shadow-lg bg-white border border-black z-50 dropdown-menu">
           <div className="py-1">
             {children}
           </div>
@@ -252,7 +252,7 @@ const DropdownMenu = ({ title, isOpen, toggleDropdown, children }: DropdownMenuP
 const NavLink = ({ href, children, isDropdown }: { href: string; children: React.ReactNode; isDropdown?: boolean }) => (
   <a
     href={href}
-    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left' : ''}`}
+    className={`px-3 py-2 rounded-md text-sm font-medium border transition-colors ${isDropdown ? 'block w-full text-left dropdown-link' : ''}`}
     style={{
       color: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
       borderColor: document.body.getAttribute('data-theme') === 'dark' ? '#F8E061' : '#FFFFFF',
