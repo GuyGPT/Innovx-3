@@ -306,33 +306,50 @@ iframe {
   width: fit-content; /* Adjust width to fit content */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Center align items */
+  background-color: var(--dark); /* Ensure background color */
+  border: 1px solid var(--primary); /* Add border */
+  border-radius: 0.25rem; /* Add border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  padding: 0.5rem; /* Add padding for better spacing */
+  margin: 0 auto; /* Center the dropdown menu */
 }
 
 .dropdown-menu h3 {
   white-space: nowrap; /* Prevent text from wrapping */
   padding: 0.5rem 1rem; /* Add padding for better spacing */
   width: 100%; /* Ensure full width */
+  color: var(--primary); /* Ensure text color */
+  text-align: center; /* Center align text */
 }
 
 .dropdown-menu a {
   white-space: nowrap; /* Prevent text from wrapping */
   padding: 0.5rem 1rem; /* Add padding for better spacing */
   width: 100%; /* Ensure full width */
+  color: var(--light); /* Ensure text color */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Add transition */
+  text-align: center; /* Center align text */
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--primary); /* Change background on hover */
+  color: var(--dark); /* Change text color on hover */
 }
 
 .dropdown-menu .px-4.py-2 {
   width: 100%; /* Ensure full width */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Center align items */
 }
 
 .dropdown-menu .mt-1.space-y-1 {
   width: 100%; /* Ensure full width */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Center align items */
 }
 
 /* Adjust main dropdown button width */
@@ -340,4 +357,5 @@ iframe {
   width: fit-content; /* Adjust width to fit content */
   white-space: nowrap; /* Prevent text from wrapping */
   padding: 0.5rem 1rem; /* Add padding for better spacing */
+  margin: 0 auto; /* Center the dropdown button */
 }

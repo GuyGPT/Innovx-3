@@ -43,7 +43,7 @@ const Navbar = () => {
               <div className="space-y-1">
                 {/* Maintenance Professionnelle */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Wrench className="mr-2" />
                     Maintenance Professionnelle
                   </h3>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 
                 {/* Services Numériques */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Monitor className="mr-2" />
                     Services Numériques
                   </h3>
@@ -81,7 +81,7 @@ const Navbar = () => {
                 
                 {/* Services d'Affaires */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Briefcase className="mr-2" />
                     Services d'Affaires
                   </h3>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 
                 {/* Énergie et Environnement */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Leaf className="mr-2" />
                     Énergie et Environnement
                   </h3>
@@ -113,7 +113,7 @@ const Navbar = () => {
                 
                 {/* Formations Professionnelles */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <BookOpen className="mr-2" />
                     Formations Professionnelles
                   </h3>
@@ -129,7 +129,7 @@ const Navbar = () => {
                 
                 {/* Consultance et Accompagnement */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Users className="mr-2" />
                     Consultance et Accompagnement
                   </h3>
@@ -204,6 +204,7 @@ const Navbar = () => {
               className="flex items-center justify-center w-full px-3 py-2 rounded-md border transition-colors"
               style={{
                 color: theme === 'dark' ? '#F8E061' : '#FFFFFF',
+                borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
                 borderColor: theme === 'dark' ? '#F8E061' : '#FFFFFF',
                 backgroundColor: '#040504'
               }}
