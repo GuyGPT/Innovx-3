@@ -16,7 +16,7 @@
   --primary: #000000; /* Black for primary */
   --secondary: #4a5568;
   --accent: #000000;
-  --dark: #ffffff; /* White background */
+  --dark: #ffffff; /* White for dark */
   --light: #1a1a1a;
   --text-dark: #000000; /* Black for text */
   --text-light: #f8fafc;
@@ -53,6 +53,15 @@
   background-color: black !important;
   color: var(--primary) !important;
   border-color: black !important;
+}
+
+/* Dropdown Menu Text Colors */
+[data-theme="dark"] .dropdown-menu a {
+  color: white !important;
+}
+
+[data-theme="light"] .dropdown-menu a {
+  color: yellow !important;
 }
 
 /* Mobile First Approach */
