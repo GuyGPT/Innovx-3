@@ -185,7 +185,7 @@
   }
 }
 
-/* Fix responsiveness */
+/* Fix iframe responsiveness */
 iframe {
   max-width: 100%;
   width: 100%;
@@ -195,7 +195,7 @@ iframe {
 
 /* Custom Styles */
 .splash-text-container {
-  margin: 1rem; /* Reduced margin */
+  margin-bottom: 1rem; /* Reduced margin */
 }
 
 .carousel {
@@ -333,4 +333,11 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+/* Adjust main dropdown button width */
+.dropdown-menu-button {
+  width: fit-content; /* Adjust width to fit content */
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
 }
