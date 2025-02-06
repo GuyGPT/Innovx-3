@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,4 +15,387 @@
 [data-theme="light"] {
   --primary: #000000; /* Black for primary */
   --secondary: #4a5568;
-  --accent: #000
+  --accent: #000000;
+  --dark: #ffffff; /* White for dark */
+  --light: #1a1a1a;
+  --text-dark: #000000; /* Black for text */
+  --text-light: #f8fafc;
+}
+
+[data-theme="dark"] .menu button,
+[data-theme="dark"] .menu a,
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .chatbot-button {
+  color: #F8E061 !important;
+  border-color: #F8E061 !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .menu button:hover,
+[data-theme="dark"] .menu a:hover {
+  background-color: #F8E061 !important;
+  color: var(--dark) !important;
+  border-color: #F8E061 !important;
+}
+
+/* Mobile Menu Specific Styles */
+[data-theme="dark"] .menu .mobile-menu button,
+[data-theme="dark"] .menu .mobile-menu a,
+[data-theme="dark"] .menu .mobile-menu .theme-toggle,
+[data-theme="dark"] .menu .mobile-menu .chatbot-button {
+  color: #F8E061 !important;
+  border-color: #F8E061 !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .menu .mobile-menu button:hover,
+[data-theme="dark"] .menu .mobile-menu a:hover {
+  background-color: #F8E061 !important;
+  color: var(--dark) !important;
+  border-color: #F8E061 !important;
+}
+
+/* Dropdown Menu Text Colors */
+[data-theme="dark"] .dropdown-menu a {
+  color: #F8E061 !important;
+}
+
+/* Mobile First Approach */
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* Laptop and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Responsive Carousel */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Change height to auto */
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark);
+    padding: 1rem;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .menu button,
+  .menu a,
+  .theme-toggle,
+  .chatbot-button {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    background-color: transparent !important;
+  }
+
+  .menu button:hover,
+  .menu a:hover {
+    background-color: var(--primary) !important;
+    color: var(--dark) !important;
+    border-color: var(--primary) !important;
+  }
+}
+
+/* Responsive Chat Widget */
+@media (max-width: 768px) {
+  #chatbot-widget {
+    width: 90vw !important;
+    height: 80vh !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+  }
+}
+
+/* Responsive Controls */
+@media (max-width: 640px) {
+  .theme-toggle,
+  .chatbot-button {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 1rem !important;
+    position: fixed !important;
+  }
+
+  .theme-toggle {
+    left: 1rem !important;
+  }
+
+  .chatbot-button {
+    right: 1rem !important;
+  }
+}
+
+/* Fix iframe responsiveness */
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+/* Custom Styles */
+.splash-text-container {
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.carousel {
+  margin-top: 1rem; /* Reduced margin */
+}
+
+/* Mobile Menu Styles */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark);
+  padding: 1rem;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.menu button,
+.menu a,
+.theme-toggle,
+.chatbot-button {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+
+.menu button:hover,
+.menu a:hover {
+  background-color: var(--primary) !important;
+  color: var(--dark) !important;
+  border-color: var(--primary) !important;
+}
+
+.menu .mobile-menu button,
+.menu .mobile-menu a,
+.menu .mobile-menu .theme-toggle,
+.menu .mobile-menu .chatbot-button {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+
+.menu .mobile-menu button:hover,
+.menu .mobile-menu a:hover {
+  background-color: var(--primary) !important;
+  color: var(--dark) !important;
+  border-color: var(--primary) !important;
+}
+
+.menu .mobile-menu a {
+  display: block;
+  padding: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+}
+
+.menu .mobile-menu .theme-toggle,
+.menu .mobile-menu .chatbot-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+}
+
+.menu .mobile-menu .theme-toggle:hover,
+.menu .mobile-menu .chatbot-button:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.carousel-controls {
+  bottom: -20px; /* Ajustez cette valeur pour contrôler l'écart entre le carrousel et les boutons */
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.modal-overlay .modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  min-width: 200px; /* Minimum width for dropdown */
+  max-width: 300px; /* Maximum width for dropdown */
+  width: fit-content; /* Adjust width to fit content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+  /* background-color: white;  Ensure background color */
+  /* border: 1px solid black;  Add border */
+  border-radius: 0.25rem; /* Add border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  padding: 0.5rem; /* Add padding for better spacing */
+  margin: 0 auto; /* Center the dropdown menu */
+}
+
+.dropdown-menu h3 {
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
+  width: 100%; /* Ensure full width */
+  /* color: black;  Ensure text color */
+  text-align: center; /* Center align text */
+}
+
+.dropdown-menu a {
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
+  width: 100%; /* Ensure full width */
+  /* color: black;  Ensure text color */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Add transition */
+  text-align: center; /* Center align text */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+  /* color: black;  Change text color on hover */
+}
+
+.dropdown-menu .px-4.py-2 {
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+.dropdown-menu .mt-1.space-y-1 {
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+/* Adjust main dropdown button width */
+.dropdown-menu-button {
+  width: fit-content; /* Adjust width to fit content */
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
+  margin: 0 auto; /* Center the dropdown button */
+}
+
+.dropdown-link {
+  /* color: black !important; */
+  /* border-color: black !important; */
+  /* background-color: white !important; */
+}
+
+.dropdown-link:hover {
+  background-color: #f0f0f0 !important;
+  /* color: black !important; */
+}
+
+[data-theme="light"] .dropdown-menu {
+    background-color: white;
+    border: 1px solid black;
+}
+
+[data-theme="light"] .dropdown-menu h3 {
+    color: black;
+}
+
+[data-theme="light"] .dropdown-menu a {
+    color: black;
+}
+
+[data-theme="light"] .dropdown-link {
+    color: black !important;
+    border-color: black !important;
+    background-color: white !important;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: black;
+    border: 1px solid #F8E061;
+}
+
+[data-theme="dark"] .dropdown-menu h3 {
+    color: #F8E061;
+}
+
+[data-theme="dark"] .dropdown-menu a {
+    color: #F8E061;
+}
+
+[data-theme="dark"] .dropdown-link {
+    color:  #F8E061 !important;
+    border-color:  #F8E061 !important;
+    background-color: black !important;
+}
