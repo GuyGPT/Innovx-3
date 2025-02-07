@@ -53,7 +53,7 @@ const Navbar = () => {
               <div className="space-y-1 max-h-[60vh] overflow-y-auto">
                 {/* Maintenance Professionnelle */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Wrench className="mr-2" />
                     Maintenance Professionnelle
                   </h3>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
                 {/* Services Numériques */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Monitor className="mr-2" />
                     Services Numériques
                   </h3>
@@ -97,7 +97,7 @@ const Navbar = () => {
 
                 {/* Services d'Affaires */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Briefcase className="mr-2" />
                     Services d'Affaires
                   </h3>
@@ -115,7 +115,7 @@ const Navbar = () => {
 
                 {/* Énergie et Environnement */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Leaf className="mr-2" />
                     Énergie et Environnement
                   </h3>
@@ -133,7 +133,7 @@ const Navbar = () => {
 
                 {/* Formations Professionnelles */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <BookOpen className="mr-2" />
                     Formations Professionnelles
                   </h3>
@@ -151,7 +151,7 @@ const Navbar = () => {
 
                 {/* Consultance et Accompagnement */}
                 <div className="px-4 py-2">
-                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+                  <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
                     <Users className="mr-2" />
                     Consultance et Accompagnement
                   </h3>
@@ -252,7 +252,7 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-2 max-h-[calc(100vh-64px)] overflow-y-auto">
           {/* Maintenance Professionnelle */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Wrench className="mr-2" />
               Maintenance Professionnelle
             </h3>
@@ -272,7 +272,7 @@ const Navbar = () => {
 
           {/* Services Numériques */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Monitor className="mr-2" />
               Services Numériques
             </h3>
@@ -292,7 +292,7 @@ const Navbar = () => {
 
           {/* Services d'Affaires */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Briefcase className="mr-2" />
               Services d'Affaires
             </h3>
@@ -308,7 +308,7 @@ const Navbar = () => {
 
           {/* Énergie et Environnement */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Leaf className="mr-2" />
               Énergie et Environnement
             </h3>
@@ -324,7 +324,7 @@ const Navbar = () => {
 
           {/* Formations Professionnelles */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <BookOpen className="mr-2" />
               Formations Professionnelles
             </h3>
@@ -340,7 +340,7 @@ const Navbar = () => {
 
           {/* Consultance et Accompagnement */}
           <div className="mb-2">
-            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-between whitespace-nowrap">
+            <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Users className="mr-2" />
               Consultance et Accompagnement
             </h3>
