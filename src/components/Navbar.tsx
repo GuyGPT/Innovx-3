@@ -45,7 +45,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <DropdownMenu title="Services" isOpen={openDropdown === 'Services'} toggleDropdown={toggleDropdown}>
-              <div className="space-y-1">
+              <div className="space-y-1 max-h-[60vh] overflow-y-auto">
                 {/* Maintenance Professionnelle */}
                 <div className="px-4 py-2">
                   <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
@@ -185,7 +185,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-[#040504]">
-          <div className="px-2 pt-2 pb-3 space-y-2"> {/* Added space-y-2 */}
+          <div className="px-2 pt-2 pb-3 space-y-2">
             <MobileNavLink href="#services" onClick={() => {setIsMenuOpen(false); toggleServicesMenu();}}>
               Services
             </MobileNavLink>
@@ -231,9 +231,9 @@ const Navbar = () => {
             <X size={24} />
           </button>
         </div>
-        <div className="px-2 pt-2 pb-3 space-y-2"> {/* Added space-y-2 */}
+        <div className="px-2 pt-2 pb-3 space-y-2 max-h-[calc(100vh-64px)] overflow-y-auto">
           {/* Maintenance Professionnelle */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Wrench className="mr-2" />
               Maintenance Professionnelle
@@ -250,7 +250,7 @@ const Navbar = () => {
           </div>
 
           {/* Services Numériques */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Monitor className="mr-2" />
               Services Numériques
@@ -267,7 +267,7 @@ const Navbar = () => {
           </div>
 
           {/* Services d'Affaires */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Briefcase className="mr-2" />
               Services d'Affaires
@@ -281,7 +281,7 @@ const Navbar = () => {
           </div>
 
           {/* Énergie et Environnement */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Leaf className="mr-2" />
               Énergie et Environnement
@@ -295,7 +295,7 @@ const Navbar = () => {
           </div>
 
           {/* Formations Professionnelles */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <BookOpen className="mr-2" />
               Formations Professionnelles
@@ -309,7 +309,7 @@ const Navbar = () => {
           </div>
 
           {/* Consultance et Accompagnement */}
-          <div className="mb-2"> {/* Added mb-2 */}
+          <div className="mb-2">
             <h3 className="text-sm font-semibold text-white dark:text-[#F8E061] flex items-center justify-center whitespace-nowrap">
               <Users className="mr-2" />
               Consultance et Accompagnement
